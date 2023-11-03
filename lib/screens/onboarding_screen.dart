@@ -126,7 +126,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   if (currentIndex > 0)
                     TextButton(
                       onPressed: () {
-                        print('TextButton pressed');
+                        print('Hello');
                       },
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
@@ -163,7 +163,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           );
                         }
                         _controller.nextPage(
-                          duration: Duration(milliseconds: 100),
+                          duration: const Duration(milliseconds: 100),
                           curve: Curves.bounceIn,
                         );
                       },

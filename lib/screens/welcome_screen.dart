@@ -20,7 +20,7 @@ class WelcomeScreen extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: () {
-                          print('Icon button clicked');
+                          print('Hello');
                         },
                         icon: const Icon(Icons.arrow_back_ios_rounded,
                             color: Colors.white),
