@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_todo_app/screens/login_screen.dart';
 import 'package:my_todo_app/screens/splash_screen.dart';
 
 void main() {
@@ -11,10 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Todo App',
-      home: SplashScreen(),
+      home: const SplashScreen(),
+      routes: {
+        '/login': (context) => LoginScreen(),
+      },
     );
   }
 }
