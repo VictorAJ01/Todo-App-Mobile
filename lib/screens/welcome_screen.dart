@@ -69,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        print("Hello World!");
+                        Navigator.pushNamed(context, '/login');
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
