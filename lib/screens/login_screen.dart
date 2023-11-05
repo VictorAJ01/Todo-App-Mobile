@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      print('Hello');
+                      Navigator.pop(context);
                     },
                     icon: const Icon(Icons.arrow_back_ios_rounded,
                         color: Colors.white),
@@ -123,21 +123,20 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    height: 1,
-                    width: 145,
-                    decoration: const BoxDecoration(
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.8,
                       color: Color(0xFF979797),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 2,
                   ),
-                  const Text(
+                  Text(
                     'or',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -146,13 +145,12 @@ class LoginScreen extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 2,
                   ),
-                  Container(
-                    height: 1,
-                    width: 145,
-                    decoration: const BoxDecoration(
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.8,
                       color: Color(0xFF979797),
                     ),
                   ),
