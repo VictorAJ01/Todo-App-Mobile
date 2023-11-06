@@ -106,7 +106,7 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          print("Hello World!");
+                          Navigator.pushNamed(context, '/register');
                         },
                         child: const Text(
                           'CREATE ACCOUNT',

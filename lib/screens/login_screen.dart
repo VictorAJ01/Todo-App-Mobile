@@ -36,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 30,
+                height: 41,
               ),
               const Text(
                 "Login",
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 53,
               ),
               Form(
                 child: Column(
@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 8,
                     ),
                     MyFormTextField(
                       controller: usernameController,
@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                       obscureText: true,
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 25,
                     ),
                     const Text(
                       'Password',
@@ -86,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 8,
                     ),
                     MyFormTextField(
                       controller: passwordController,
@@ -162,7 +162,7 @@ class LoginScreen extends StatelessWidget {
               Column(
                 children: [
                   SizedBox(
-                    height: 50,
+                    height: 48,
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ButtonStyle(
@@ -202,10 +202,10 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 17,
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 48,
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ButtonStyle(
@@ -249,29 +249,34 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Column(
+              Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Don\'t have an account?',
+                      const Text(
+                        'Don\'t have an account? ',
                         style: TextStyle(
                           color: Color(0xFF979797),
                           fontFamily: 'Lato',
                           fontSize: 13,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 3,
                       ),
-                      Text(
-                        'Register',
-                        style: TextStyle(
-                          color: Color(0xDDFFFFFF),
-                          fontFamily: 'Lato',
-                          fontSize: 13,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/register');
+                        },
+                        child: const Text(
+                          'Register',
+                          style: TextStyle(
+                            color: Color(0xDDFFFFFF),
+                            fontFamily: 'Lato',
+                            fontSize: 13,
+                          ),
                         ),
                       )
                     ],
