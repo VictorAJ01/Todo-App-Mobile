@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) => const OnBoardingScreen()));
     });
@@ -31,35 +31,31 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFF121212),
-        ),
-        child: const Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.check_box_outlined,
-              size: 95,
-              color: Color(0xFF8685E7),
-              weight: 70.0,
+    return const Scaffold(
+      backgroundColor: Color(0xFF121212),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.check_box_outlined,
+            size: 95,
+            color: Color(0xFF8685E7),
+            weight: 70.0,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: Text(
+              'UpTodo',
+              style: TextStyle(
+                  fontFamily: 'Lato',
+                  color: Colors.white,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Center(
-              child: Text(
-                'UpTodo',
-                style: TextStyle(
-                    fontFamily: 'Lato',
-                    color: Colors.white,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
