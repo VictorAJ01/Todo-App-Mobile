@@ -29,10 +29,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: const Color(0xFF121212),
+      backgroundColor: const Color(0xFF121212),
+      body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 24),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -96,14 +96,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               fontFamily: 'Lato',
                               fontWeight: FontWeight.bold,
                               color: Color(0xDDFFFFFF),
-                              fontSize: 35,
+                              fontSize: 32,
                             ),
                           ),
                           const SizedBox(
-                            height: 40,
+                            height: 42,
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 30),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30,
+                            ),
                             child: Text(
                               contents[index].description,
                               textAlign: TextAlign.center,
@@ -180,6 +182,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 20,
               )
             ],
           ),
