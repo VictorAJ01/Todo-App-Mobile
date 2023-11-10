@@ -153,12 +153,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                             onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Processing Data')),
-                                );
-                              }
+                              Navigator.popAndPushNamed(context, '/home');
+                              // if (_formKey.currentState!.validate()) {}
                             },
                             child: const Text(
                               'Register',
