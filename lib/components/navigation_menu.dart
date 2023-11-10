@@ -5,7 +5,10 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../screens/calendar/calendar_screen.dart';
+import '../screens/focus/focus_screen.dart';
 import '../screens/home/home_screen.dart';
+import '../screens/profile/profile_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -97,11 +100,11 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [
-    const HomeScreen(),
-    Container(color: Colors.blue),
-    Container(color: Colors.deepOrange),
-    Container(color: Colors.orange),
+  final screens = const [
+    HomeScreen(),
+    CalendarScreen(),
+    FocusScreen(),
+    ProfileScreen(),
   ];
 
   int getDestinationIndexByLabel(String label) {
