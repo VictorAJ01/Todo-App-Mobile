@@ -16,6 +16,19 @@ class _FocusScreenState extends State<FocusScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF121212),
+      appBar: AppBar(
+        title: const Text(
+          'Focus Mode',
+          style: TextStyle(
+            fontFamily: 'Lato',
+            fontSize: 20.0,
+            color: Color(0xDDFFFFFF),
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+      ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
