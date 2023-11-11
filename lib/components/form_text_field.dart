@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
 
 class MyFormTextField extends StatelessWidget {
-  final controller;
+  final TextEditingController controller;
   final String hintText;
   final bool obscureText;
+  final bool filled;
   final String? Function(String?)? validator;
+  final String? initialValue;
 
   const MyFormTextField(
       {super.key,
       required this.controller,
       required this.hintText,
       required this.obscureText,
-      required this.validator});
+      required this.filled,
+      required this.validator,
+      this.initialValue});
 
   @override
   Widget build(BuildContext context) {
+    if (initialValue != null) {
+      controller.text = initialValue!;
+    }
+
     return TextFormField(
       validator: validator,
       controller: controller,
@@ -38,7 +46,7 @@ class MyFormTextField extends StatelessWidget {
           ),
         ),
         fillColor: const Color(0xFF1D1D1D),
-        filled: true,
+        filled: filled,
         hintText: hintText,
         hintStyle: const TextStyle(
           color: Color(0xFF535353),
