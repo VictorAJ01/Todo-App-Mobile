@@ -78,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           controller: usernameController,
                           hintText: 'Enter your Username',
                           obscureText: false,
+                          filled: true,
                           validator: (value) {
                             if (value == '' || value!.isEmpty) {
                               return 'Please enter username';
@@ -105,6 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           controller: passwordController,
                           hintText: '**********',
                           obscureText: true,
+                          filled: true,
                           validator: (value) {
                             if (value == '' || value!.isEmpty) {
                               return 'Please enter password';

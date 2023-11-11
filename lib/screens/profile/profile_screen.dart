@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../components/profile_list_view.dart';
+import 'change_name_modal.dart';
+import 'change_password_modal.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -128,13 +130,23 @@ class ProfileScreen extends StatelessWidget {
               leadingIcon: Iconsax.user,
               title: 'Change account name',
               trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) => ChangeNameModal(),
+                );
+              },
             ),
             ProfileListView(
               leadingIcon: Iconsax.key,
               title: 'Change account password',
               trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => ChangePasswordModal(),
+                );
+              },
             ),
             ProfileListView(
               leadingIcon: Iconsax.camera,
