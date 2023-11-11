@@ -15,20 +15,9 @@ class _FocusTimerState extends State<FocusTimer> {
     return Center(
       child: Column(
         children: [
-          const Text(
-            'Focus Mode',
-            style: TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 20.0,
-              color: Color(0xDDFFFFFF),
-            ),
-          ),
-          const SizedBox(
-            height: 35,
-          ),
           CircularPercentIndicator(
-            radius: 95.0,
-            lineWidth: 13.0,
+            radius: 90.0,
+            lineWidth: 12.0,
             percent: percent,
             progressColor: const Color(0xFF8687E7),
             backgroundColor: const Color(0xFF555555),
@@ -75,7 +64,8 @@ class _FocusTimerState extends State<FocusTimer> {
               child: const Text(
                 'Stop Focusing',
                 style: TextStyle(
-                  fontFamily: 'Lato',
+                  fontFamily:
+                      'Lato', // if (_formKey.currentState!.validate()) {}
                   fontSize: 16,
                 ),
               ),
