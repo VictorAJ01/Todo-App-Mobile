@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:iconsax/iconsax.dart';
 
-import '../../components/profile_list_view.dart';
-import 'change_name_modal.dart';
-import 'change_password_modal.dart';
+import 'components/account_section.dart';
+import 'components/setting_section.dart';
+import 'components/tasks_action_buttons.dart';
+import 'components/up_todo_section.dart';
+import 'components/user_profile_image.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -13,179 +14,66 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF121212),
+      appBar: AppBar(
+        title: const Text(
+          'Profile',
+          style: TextStyle(
+            fontFamily: 'Lato',
+            fontSize: 20.0,
+            color: Color(0xDDFFFFFF),
+          ),
+        ),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+      ),
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
           children: [
-            const SizedBox(height: 10),
-            Center(
-              child: Column(
+            const SizedBox(
+              height: 10,
+            ),
+            const UserProfileImage(),
+            const SizedBox(height: 25),
+            const TasksActionButtons(),
+            const SizedBox(height: 32.0),
+            const SettingSection(),
+            const SizedBox(height: 20),
+            const AccountSection(),
+            const SizedBox(height: 20),
+            const UpTodoSection(),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                padding: EdgeInsets.zero,
+                elevation: 0,
+                alignment: Alignment.centerLeft,
+              ),
+              child: const Row(
                 children: [
-                  const Text(
-                    'Profile',
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 20.0,
-                      color: Color(0xDDFFFFFF),
-                    ),
+                  Icon(
+                    Iconsax.logout,
+                    color: Color(0xFFFF4949),
                   ),
-                  const SizedBox(height: 16),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(50.0),
-                    child: Image.asset('images/user-profile-image-01.png'),
+                  SizedBox(
+                    width: 17,
                   ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Martha Hays',
+                  Text(
+                    'Log out',
                     style: TextStyle(
+                      color: Color(0xFFFF4949),
                       fontFamily: 'Lato',
-                      fontSize: 20.0,
-                      color: Color(0xDDFFFFFF),
+                      fontSize: 17.0,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 25),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 58,
-                    child: TextButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFF363636),
-                        ),
-                      ),
-                      onPressed: () {
-                        print('10 Task left');
-                      },
-                      child: const Text(
-                        '10 Task left',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 16.0,
-                          color: Color(0xDDFFFFFF),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 20),
-                Expanded(
-                  child: SizedBox(
-                    height: 58,
-                    child: TextButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFF363636),
-                        ),
-                      ),
-                      onPressed: () {
-                        print('5 Task done');
-                      },
-                      child: const Text(
-                        '5 Task done',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 16.0,
-                          color: Color(0xDDFFFFFF),
-                        ),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(height: 32.0),
-            const Text(
-              'Settings',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontSize: 14.0,
-                color: Color(0xFFAFAFAF),
-              ),
-            ),
-            const SizedBox(height: 5),
-            ProfileListView(
-              leadingIcon: Iconsax.setting_2,
-              title: 'App Settings',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {
-                Navigator.pushNamed(context, '/setting');
-              },
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Account',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontSize: 14.0,
-                color: Color(0xFFAFAFAF),
-              ),
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.user,
-              title: 'Change account name',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) => ChangeNameModal(),
-                );
-              },
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.key,
-              title: 'Change account password',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => ChangePasswordModal(),
-                );
-              },
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.camera,
-              title: 'Change account Image',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Uptodo',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontSize: 14.0,
-                color: Color(0xFFAFAFAF),
-              ),
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.menu,
-              title: 'About US',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.info_circle,
-              title: 'FAQ',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.flash_1,
-              title: 'Help & Feedback',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
-            ),
-            ProfileListView(
-              leadingIcon: Iconsax.like_1,
-              title: 'Support US',
-              trailingIcon: Iconsax.arrow_right_3,
-              onTap: () {},
+            const SizedBox(
+              height: 40,
             ),
           ],
         ),

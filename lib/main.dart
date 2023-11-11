@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/navigation_menu.dart';
-import 'screens/profile/setting_screen.dart';
+import 'screens/profile/components/setting_screen.dart';
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
         '/home': (context) => const NavigationMenu(),
-        '/setting': (context) => const SettingScreen(),
+        '/setting': (context) => SettingScreen(),
       },
     );
   }

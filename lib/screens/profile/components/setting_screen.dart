@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:iconsax/iconsax.dart';
 
-import '../../components/profile_list_view.dart';
+import '../../../components/profile_list_view.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
