@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components/form_text_field.dart';
+import '../../../components/form_text_field.dart';
 
 class ChangeNameModal extends StatelessWidget {
   ChangeNameModal({super.key});

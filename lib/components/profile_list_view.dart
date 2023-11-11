@@ -18,6 +18,7 @@ class ProfileListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
+      dense: true,
       leading: Icon(
         leadingIcon,
         color: const Color(0xDDFFFFFF),

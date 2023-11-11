@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components/form_text_field.dart';
+import '../../../components/form_text_field.dart';
 
 class ChangePasswordModal extends StatelessWidget {
   ChangePasswordModal({super.key});
