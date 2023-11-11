@@ -43,7 +43,7 @@ class NavigationMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _buildBottomNavItem(
-                    controller, 'Index', Iconsax.home, Iconsax.home_25),
+                    controller, 'Home', Iconsax.home, Iconsax.home_25),
                 _buildBottomNavItem(controller, 'Calendar', Iconsax.calendar_1,
                     Iconsax.calendar_25),
                 const SizedBox(
@@ -100,17 +100,17 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = const [
-    HomeScreen(),
-    CalendarScreen(),
+  final screens = [
+    const HomeScreen(),
+    const CalendarScreen(),
     FocusScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   int getDestinationIndexByLabel(String label) {
     // Implement logic to get the index based on the label
     switch (label) {
-      case 'Index':
+      case 'Home':
         return 0;
       case 'Calendar':
         return 1;
